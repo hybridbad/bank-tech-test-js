@@ -1,0 +1,14 @@
+{
+  "name": "bank-tech-test",
+  "version": "1.0.0",
+  "description": "Bank Tech Test in Javascript",
+  "main": "account.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jasmine"
+  },
+  "author": "James Davies",
+  "license": "ISC"
+}
