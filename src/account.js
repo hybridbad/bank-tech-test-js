@@ -1,4 +1,3 @@
-
 class Account {
   constructor(name) {
     this.name = name;
@@ -30,9 +29,14 @@ class Account {
 
   printStatement(){
     console.log("date || credit || debit || balance");
-    this.statement.forEach(function(record){
-      console.log(record);
-    })
+    const statement = this.statement;
+    statement.forEach(function(record){
+      if (record.credit === undefined) { record.credit = "" }
+      if (record.debit === undefined) { record.debit = "" }
+      console.log(
+        record.date + " || " + record.credit + " || " + record.debit + " || " + record.balance
+      );
+    });
   }
 }
 
