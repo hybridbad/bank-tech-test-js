@@ -1,14 +1,15 @@
 /* eslint-disable no-console */
 class Account {
-  constructor(name) {
+  constructor(name, printer) {
     this.name = name;
     this.balance = 0;
     this.statement = [];
+    this.printer = printer;
   }
 
   deposit(amount, date){
     if (amount < 0) return
-    this.balance += amount;
+    this.updateBalance(amount)
     const depositObj = {
       credit: amount, 
       date: date,
@@ -19,7 +20,7 @@ class Account {
 
   withdraw(amount, date){
     if (amount > this.balance) throw "Not enough funds";
-    this.balance -= amount;
+    this.updateBalance(-amount)
     const withdrawObj = {
       debit: amount, 
       date: date,
@@ -29,14 +30,11 @@ class Account {
   }
 
   printStatement(){
-    console.log("date || credit || debit || balance");
-    this.statement.forEach(function(record){
-      if (record.credit === undefined) { record.credit = "" }
-      if (record.debit === undefined) { record.debit = "" }
-      console.log(
-        record.date + " || " + record.credit + " || " + record.debit + " || " + record.balance
-      );
-    });
+    return this.printer.printStatement(this.statement);
+  }
+
+  updateBalance(amount){
+    this.balance += amount;
   }
 }
 

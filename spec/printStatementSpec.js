@@ -2,12 +2,15 @@
 /* eslint-disable no-console */
 
 const Account = require('../src/account');
+const Printer = require('../src/printer');
 
 describe('#feature test - print a bank statement', function(){
   let account;
+  let printer;
 
   beforeEach(function(){
-    account = new Account('James');
+    printer = new Printer();
+    account = new Account('James', printer);
     spyOn(console, "log");
   });
 

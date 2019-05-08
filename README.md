@@ -13,13 +13,20 @@ git clone git@github.com:hybridbad/bank-tech-test-js.git
 cd bank-tech-test-js
 npm install
 node
+.load ./src/printer.js
 .load ./src/account.js
-
-const account = new Account('Your name here')
+const printer = new Printer()
+const account = new Account('Your name here', printer)
 ```
 
 #### Node console screen
+
 ![Node console](https://github.com/hybridbad/bank-tech-test-js/blob/master/img/node_shot.png?raw=true)
+
+To run jasmine testing, in root of dir type:
+```script
+npm test
+```
 
 
 ### Requirements
