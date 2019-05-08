@@ -3,8 +3,24 @@
 ### Language and Technolgies
 
 - Javascript
-- Jest
-- Console interaction with JS console
+- Jasmine
+- Console interaction with node console
+
+### Run program
+```script
+cd to folder you want to clone to
+git clone git@github.com:hybridbad/bank-tech-test-js.git
+cd bank-tech-test-js
+npm install
+node
+.load ./src/account.js
+
+const account = new Account('Your name here')
+```
+
+#### Node console screen
+![Node console](https://github.com/hybridbad/bank-tech-test-js/tree/master/img/node_shot.png)
+
 
 ### Requirements
 
