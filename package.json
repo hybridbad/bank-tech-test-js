@@ -12,6 +12,7 @@
   "author": "James Davies",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^5.16.0",
     "jasmine": "^3.4.0"
   }
 }

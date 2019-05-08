@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 class Account {
   constructor(name) {
     this.name = name;
@@ -29,8 +30,7 @@ class Account {
 
   printStatement(){
     console.log("date || credit || debit || balance");
-    const statement = this.statement;
-    statement.forEach(function(record){
+    this.statement.forEach(function(record){
       if (record.credit === undefined) { record.credit = "" }
       if (record.debit === undefined) { record.debit = "" }
       console.log(

@@ -1,3 +1,6 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-console */
+
 const Account = require('../src/account');
 
 describe('#feature test - print a bank statement', function(){
