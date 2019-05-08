@@ -1,16 +1,18 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-console */
-
+const Transaction = require('../src/transaction');
+const Printer = require('../src/printer')
 const Account = require('../src/account');
-const Printer = require('../src/printer');
 
 describe('#feature test - print a bank statement', function(){
-  let account;
+  let transaction;
   let printer;
+  let account;
 
   beforeEach(function(){
+    transaction = new Transaction();
     printer = new Printer();
-    account = new Account('James', printer);
+    account = new Account('James', printer, transaction);
     spyOn(console, "log");
   });
 
@@ -28,7 +30,7 @@ describe('#feature test - print a bank statement', function(){
       "date || credit || debit || balance"
     );
     expect(console.log).toHaveBeenCalledWith(
-      "07/05/2019 || 100 ||  || 100"
+      "07/05/2019 || 100.00 ||  || 100.00"
     );
   });
 
@@ -40,10 +42,10 @@ describe('#feature test - print a bank statement', function(){
       "date || credit || debit || balance"
     );
     expect(console.log).toHaveBeenCalledWith(
-      "07/05/2019 || 100 ||  || 100"
+      "07/05/2019 || 100.00 ||  || 100.00"
     );
     expect(console.log).toHaveBeenCalledWith(
-      "07/05/2019 ||  || 50 || 50"
+      "07/05/2019 ||  || 50.00 || 50.00"
     );
   })
 

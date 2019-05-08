@@ -4,6 +4,7 @@
 
 - Javascript
 - Jasmine
+- Istanbul test coverage
 - Console interaction with node console
 
 ### Run program
@@ -13,19 +14,21 @@ git clone git@github.com:hybridbad/bank-tech-test-js.git
 cd bank-tech-test-js
 npm install
 node
+.load ./src/transaction.js
 .load ./src/printer.js
 .load ./src/account.js
+const transaction = new Transaction()
 const printer = new Printer()
-const account = new Account('Your name here', printer)
+const account = new Account('Your name here', printer, transaction)
 ```
 
 #### Node console screen
 
 ![Node console](https://github.com/hybridbad/bank-tech-test-js/blob/master/img/node_shot.png?raw=true)
 
-To run jasmine testing, in root of dir type:
+To run jasmine testing plus coverage, in root of dir type:
 ```script
-npm test
+npm run coverage
 ```
 
 
