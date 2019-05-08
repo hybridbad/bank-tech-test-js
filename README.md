@@ -19,7 +19,7 @@ const account = new Account('Your name here')
 ```
 
 #### Node console screen
-![Node console](https://github.com/hybridbad/bank-tech-test-js/tree/master/img/node_shot.png)
+![Node console](https://github.com/hybridbad/bank-tech-test-js/blob/master/img/node_shot.png?raw=true)
 
 
 ### Requirements
