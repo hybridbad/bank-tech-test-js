@@ -7,7 +7,7 @@ class Transaction {
       date: date,
       balance: balance.toFixed(2)
     };
-    statement.push(depositObj);
+    statement.unshift(depositObj);
   }
 
   withdraw(amount, date, statement, balance){
@@ -17,7 +17,7 @@ class Transaction {
       date: date,
       balance: balance.toFixed(2)
     };
-    statement.push(withdrawObj);
+    statement.unshift(withdrawObj);
   }
 
 }
